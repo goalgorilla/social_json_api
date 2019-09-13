@@ -60,7 +60,7 @@ function social_json_api_install() {
  */
 function social_json_api_uninstall() {
   // Remove the private files directory with the oauth_api_keys.
-  file_unmanaged_delete_recursive('private://oauth_api_keys/');
+  \Drupal::service('file_system')->deleteRecursive('private://oauth_api_keys/');
 }
 
 /**
