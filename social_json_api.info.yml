@@ -12,5 +12,5 @@ dependencies:
   - openapi
   - schemata_json_schema
 
-version: '8.x-1.0-alpha2'
+version: '8.x-1.0-alpha4'
 project: 'social_json_api'
