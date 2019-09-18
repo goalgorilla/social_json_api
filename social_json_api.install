@@ -30,7 +30,8 @@ function social_json_api_install() {
       $simple_oauth_settings->set('public_key', $path . 'public.key');
       $simple_oauth_settings->set('private_key', $path . 'private.key');
       $simple_oauth_settings->save();
-    } catch (Exception $e) {
+    }
+    catch (Exception $e) {
       $oauth_key_generator_message = t('Could not generate the Simple OAuth keys needed for the JSON API. You will need to create those by hand.');
     }
   }
@@ -86,6 +87,8 @@ function _social_json_api_get_permissions($role) {
     'update own consumer entities',
     'view own consumer entities',
     'view published event enrollment entities',
+    'view unpublished event enrollment entities',
+    'edit event enrollment entities',
     'access openapi api docs',
     'configure social json api',
   ];
@@ -93,5 +96,6 @@ function _social_json_api_get_permissions($role) {
   if (isset($permissions[$role])) {
     return $permissions[$role];
   }
+
   return [];
 }

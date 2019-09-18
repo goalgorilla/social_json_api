@@ -18,8 +18,7 @@ class SocialJsonApiSettings extends ConfigFormBase {
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
-    return [
-    ];
+    return [];
   }
 
   /**
@@ -33,7 +32,6 @@ class SocialJsonApiSettings extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    //    $config = $this->config('social_json_api.settings');
     $form['consumers'] = [
       '#type' => 'details',
       '#title' => $this->t('Consumers'),

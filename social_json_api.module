@@ -5,6 +5,10 @@
  * Contains social_json_api.module.
  */
 
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Session\AccountInterface;
+
 /**
  * Implements hook_entity_type_alter().
  */
@@ -23,11 +27,20 @@ function social_json_api_entity_type_alter(array &$entity_types) {
     'user',
   ];
 
-  /** @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
+  /* @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
   foreach ($entity_types as $entity_name => $entity_type) {
-    /** @var $entity_type \Drupal\Core\Entity\EntityTypeInterface */
+    /* @var $entity_type \Drupal\Core\Entity\EntityTypeInterface */
     if (in_array($entity_name, $allow, TRUE) !== TRUE) {
       $entity_type->set('internal', TRUE);
     }
   }
+}
+
+/**
+ * Implements hook_jsonapi_ENTITY_TYPE_filter_access().
+ */
+function social_json_api_jsonapi_event_enrollment_filter_access(EntityTypeInterface $entity_type, AccountInterface $account) {
+  return ([
+    JSONAPI_FILTER_AMONG_ALL => AccessResult::allowedIfHasPermission($account, 'view published event enrollment entities'),
+  ]);
 }

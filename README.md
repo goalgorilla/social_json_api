@@ -13,7 +13,7 @@ Social JSON API provides an API which can be used with the following entities:
 * taxonomy_term
 * user
 
-It works out of the box for these entities. However you'll need to do some configuration to access the API (authentication and authorization).
+It works out of the box for these entities. However you'll need to do some configuration to access the API (authentication and authorization). 
 
 ## Installation
 
@@ -26,7 +26,7 @@ It works out of the box for these entities. However you'll need to do some confi
 
 The API System which is implemented has multiple authentication grants available. These are all allowed in Open Social by default. 
 
-To determine which grant is applicable for your use-case please read the [oauth2 documentation](http://oauth2.thephpleague.com/authorization-server/which-grant/) For demo purposes we assume you'll want the password grant, which means that you'll login with account details of a given user.
+To determine which grant is applicable for your use-case please read the [oauth2 documentation](http://oauth2.thephpleague.com/authorization-server/which-grant/) For demo purposes we assume you'll want the password grant, which means that you'll login with account details of a given user. This user should exist in Open Social.
 
 1. Go to /admin/config/people/simple_oauth and configure the OAuth settings to your needs. Double check the expiration times and if the keys exist. During development you can set the access token expiration time on a higher value. Usually this should be below 300 seconds.
 1. Create a consumer on /admin/config/services/consumer/add
@@ -47,8 +47,8 @@ Now you can get access to the API by doing a POST Request on `/oauth/token` with
 grant_type:password
 client_id:uuid
 client_secret:secret
-username:test
-password:test
+username:{username}
+password:{password}
 ```
 
 Just fill in the client_id, client_secret, username and password accordingly. You will receive an access_token and refresh_token which you can use in subsequent requests, e.g. in refresh_token requests or you can use the same access_token during the expire time.

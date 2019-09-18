@@ -7,12 +7,13 @@
   "homepage": "https://bitbucket.org/goalgorilla/social_json_api",
   "minimum-stability": "dev",
   "require": {
-    "drupal/jsonapi": "^2.0||^8.7",
+    "drupal/jsonapi": "^8.7",
     "drupal/simple_oauth": "^3.0",
     "drupal/schemata": "^1.0",
     "drupal/openapi_ui_redoc": "^1.0",
     "drupal/openapi_ui": "^1.0",
-    "drupal/openapi": "^1.0-beta6"
+    "drupal/openapi": "^1.0-beta6",
+    "drupal/json_api_extras": "^3.12"
   },
   "extra": {
     "enable-patching": true
