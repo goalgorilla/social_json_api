@@ -55,6 +55,8 @@ Just fill in the client_id, client_secret, username and password accordingly. Yo
 
 More info here: http://oauth2.thephpleague.com/authorization-server/resource-owner-password-credentials-grant/
 
+For testing purposes you can use this [script](https://github.com/goalgorilla/social_json_api/blob/8.x-1.x/docs/postman-pre-request-script.js) in Postman for authentication.
+
 ## Documentation
 
 Some more information is available on your site on:
