@@ -86,6 +86,7 @@ function _social_json_api_get_permissions($role) {
     'delete own consumer entities',
     'update own consumer entities',
     'view own consumer entities',
+    'add event enrollment entities',
     'view published event enrollment entities',
     'view unpublished event enrollment entities',
     'edit event enrollment entities',
