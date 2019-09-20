@@ -63,3 +63,8 @@ Some more information is available on your site on:
 `/admin/config/opensocial/social-json-api`
 
 You will also find a link to the documentation for your API there. The documentation is automatically generated and displayed with [ReDoc](https://github.com/Rebilly/ReDoc).
+
+## Known issues
+
+* drupal/core: [X-CSRF-Token request header is missing when using Bearer authentication](https://www.drupal.org/node/3055260)
+* drupal/social: [The controller result claims to be providing relevant cache metadata, but leaked metadata was detected](https://github.com/goalgorilla/open_social/pull/1500)
