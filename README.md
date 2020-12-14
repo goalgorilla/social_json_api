@@ -1,3 +1,6 @@
+# Deprecated
+This module is no longer actively maintained and is deprecated.
+
 # Social JSON API
 
 Social JSON API provides an API which can be used with the following entities:
